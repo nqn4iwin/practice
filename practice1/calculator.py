@@ -7,6 +7,8 @@ class Calculator:
         if request == "times":
             return num1 * num2
         if request == "divide":
+            while num2 == 0:
+                return ValueError
             return num1 / num2
         else:
             raise ValueError
