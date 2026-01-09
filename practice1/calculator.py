@@ -6,3 +6,5 @@ class Calculator:
             return num1 - num2
         if request == "times":
             return num1 * num2
+        if request == "divide":
+            return num1 / num2
