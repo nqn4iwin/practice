@@ -6,3 +6,5 @@ class Calculator:
             return num1 - num2
         if request == "times":
             return num1 * num2
+        else:
+            raise ValueError
