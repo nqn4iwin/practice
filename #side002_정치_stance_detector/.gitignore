@@ -1,0 +1,21 @@
+# model weights
+*.safetensors
+*.pt
+*.ckpt
+
+# python
+__pycache__/
+.ipynb_checkpoints/
+
+# env
+.env
+.venv/
+.idea/
+
+# 연도별 원본 데이터 제외
+data/20*.json
+
+# 예외: 학습용 split은 포함
+!data/train.json
+!data/test.json
+!data/valid.json
