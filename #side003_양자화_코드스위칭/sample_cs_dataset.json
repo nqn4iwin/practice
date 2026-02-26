@@ -1,0 +1,306 @@
+[
+  {
+    "id": "A_word_0001",
+    "task": "A",
+    "cs_level": "word",
+    "topic": "daily",
+    "prompt": "다음 조건을 반드시 지켜서 한 문장으로 답해라. 한국어로 시작하고, 정확히 하나의 영어 단어만 포함하고, 나머지는 모두 한국어로 작성하라. 상황: 오늘 할 일을 간단히 말해라.",
+    "switch_spec": {
+      "type": "slot",
+      "constraints": {
+        "en_word_count": 1,
+        "no_extra_english": true
+      }
+    },
+    "gold_pattern": {
+      "segments": [
+        {
+          "lang": "ko"
+        },
+        {
+          "lang": "en",
+          "max_words": 1
+        },
+        {
+          "lang": "ko"
+        }
+      ]
+    },
+    "meta": {
+      "difficulty": "easy"
+    }
+  },
+  {
+    "id": "A_word_0002",
+    "task": "A",
+    "cs_level": "word",
+    "topic": "tech",
+    "prompt": "다음 조건을 반드시 지켜서 한 문장으로 답해라. 한국어로 설명하되, 정확히 하나의 영어 기술 용어만 포함하라. 상황: 코드 배포 상황을 설명해라.",
+    "switch_spec": {
+      "type": "slot",
+      "constraints": {
+        "en_word_count": 1,
+        "no_extra_english": true
+      }
+    },
+    "gold_pattern": {
+      "segments": [
+        {
+          "lang": "ko"
+        },
+        {
+          "lang": "en",
+          "max_words": 1
+        },
+        {
+          "lang": "ko"
+        }
+      ]
+    },
+    "meta": {
+      "difficulty": "easy"
+    }
+  },
+  {
+    "id": "A_word_0003",
+    "task": "A",
+    "cs_level": "word",
+    "topic": "medical",
+    "prompt": "다음 조건을 반드시 지켜서 한 문장으로 답해라. 한국어로 증상을 설명하되, 정확히 하나의 영어 단어만 포함하라. 상황: 병원에서 증상을 말한다.",
+    "switch_spec": {
+      "type": "slot",
+      "constraints": {
+        "en_word_count": 1
+      }
+    },
+    "gold_pattern": {
+      "segments": [
+        {
+          "lang": "ko"
+        },
+        {
+          "lang": "en",
+          "max_words": 1
+        },
+        {
+          "lang": "ko"
+        }
+      ]
+    },
+    "meta": {
+      "difficulty": "easy"
+    }
+  },
+  {
+    "id": "A_phrase_0001",
+    "task": "A",
+    "cs_level": "phrase",
+    "topic": "daily",
+    "prompt": "한국어로 시작하고 중간에 2~4개의 영어 단어 구를 넣은 뒤 다시 한국어로 끝내라. 상황: 친구와 약속을 잡는다.",
+    "switch_spec": {
+      "type": "slot",
+      "constraints": {
+        "en_phrase_min": 2,
+        "en_phrase_max": 4
+      }
+    },
+    "gold_pattern": {
+      "segments": [
+        {
+          "lang": "ko"
+        },
+        {
+          "lang": "en",
+          "min_words": 2,
+          "max_words": 4
+        },
+        {
+          "lang": "ko"
+        }
+      ]
+    },
+    "meta": {
+      "difficulty": "medium"
+    }
+  },
+  {
+    "id": "A_phrase_0002",
+    "task": "A",
+    "cs_level": "phrase",
+    "topic": "tech",
+    "prompt": "한국어 설명 중간에 정확히 3개의 영어 단어 구를 넣고 다시 한국어로 이어가라. 상황: 버그를 설명한다.",
+    "switch_spec": {
+      "type": "slot",
+      "constraints": {
+        "en_phrase_min": 3,
+        "en_phrase_max": 3
+      }
+    },
+    "gold_pattern": {
+      "segments": [
+        {
+          "lang": "ko"
+        },
+        {
+          "lang": "en",
+          "min_words": 3,
+          "max_words": 3
+        },
+        {
+          "lang": "ko"
+        }
+      ]
+    },
+    "meta": {
+      "difficulty": "medium"
+    }
+  },
+  {
+    "id": "A_phrase_0003",
+    "task": "A",
+    "cs_level": "phrase",
+    "topic": "education",
+    "prompt": "한국어 문장 중간에 2~5개의 영어 단어 구를 삽입하고 나머지는 한국어로 작성하라. 상황: 수업 내용을 설명한다.",
+    "switch_spec": {
+      "type": "slot",
+      "constraints": {
+        "en_phrase_min": 2,
+        "en_phrase_max": 5
+      }
+    },
+    "gold_pattern": {
+      "segments": [
+        {
+          "lang": "ko"
+        },
+        {
+          "lang": "en",
+          "min_words": 2,
+          "max_words": 5
+        },
+        {
+          "lang": "ko"
+        }
+      ]
+    },
+    "meta": {
+      "difficulty": "medium"
+    }
+  },
+  {
+    "id": "A_sentence_0001",
+    "task": "A",
+    "cs_level": "sentence",
+    "topic": "daily",
+    "prompt": "두 문장으로 답해라. 첫 문장은 한국어, 두 번째 문장은 영어. 상황: 오늘 계획을 말한다.",
+    "switch_spec": {
+      "type": "sentence",
+      "constraints": {
+        "order": [
+          "ko",
+          "en"
+        ]
+      }
+    },
+    "gold_pattern": {
+      "segments": [
+        {
+          "lang": "ko"
+        },
+        {
+          "lang": "en"
+        }
+      ]
+    },
+    "meta": {
+      "difficulty": "easy"
+    }
+  },
+  {
+    "id": "A_sentence_0002",
+    "task": "A",
+    "cs_level": "sentence",
+    "topic": "tech",
+    "prompt": "두 문장으로 답해라. 첫 문장은 영어, 두 번째 문장은 한국어. 상황: 프로젝트 상황 설명.",
+    "switch_spec": {
+      "type": "sentence",
+      "constraints": {
+        "order": [
+          "en",
+          "ko"
+        ]
+      }
+    },
+    "gold_pattern": {
+      "segments": [
+        {
+          "lang": "en"
+        },
+        {
+          "lang": "ko"
+        }
+      ]
+    },
+    "meta": {
+      "difficulty": "easy"
+    }
+  },
+  {
+    "id": "A_sentence_0003",
+    "task": "A",
+    "cs_level": "sentence",
+    "topic": "medical",
+    "prompt": "두 문장으로 답해라. 첫 문장은 한국어로 증상, 두 번째 문장은 영어 요약.",
+    "switch_spec": {
+      "type": "sentence",
+      "constraints": {
+        "order": [
+          "ko",
+          "en"
+        ]
+      }
+    },
+    "gold_pattern": {
+      "segments": [
+        {
+          "lang": "ko"
+        },
+        {
+          "lang": "en"
+        }
+      ]
+    },
+    "meta": {
+      "difficulty": "medium"
+    }
+  },
+  {
+    "id": "A_sentence_0004",
+    "task": "A",
+    "cs_level": "sentence",
+    "topic": "education",
+    "prompt": "두 문장으로 답해라. 첫 문장은 영어 설명, 두 번째 문장은 한국어 설명.",
+    "switch_spec": {
+      "type": "sentence",
+      "constraints": {
+        "order": [
+          "en",
+          "ko"
+        ]
+      }
+    },
+    "gold_pattern": {
+      "segments": [
+        {
+          "lang": "en"
+        },
+        {
+          "lang": "ko"
+        }
+      ]
+    },
+    "meta": {
+      "difficulty": "medium"
+    }
+  }
+]
