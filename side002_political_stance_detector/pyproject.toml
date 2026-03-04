@@ -1,0 +1,24 @@
+[project]
+name = "political-text-analysis"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "scikit-learn>=1.4",
+  "sentence-transformers>=3.0.0",
+  "rank-bm25>=0.2.2",
+  "wordcloud>=1.9.3",
+  "matplotlib>=3.8",
+  "gensim>=4.3",
+  "umap-learn>=0.5.5",
+  "tqdm>=4.66",
+  "transformers>=4.41.0",
+  "kiwipiepy==0.22.2",
+  "kiwipiepy-model>=0.22.1",
+]
+
+[dependency-groups]
+dev = [
+  "ruff>=0.6.0",
+]

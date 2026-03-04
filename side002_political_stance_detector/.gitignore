@@ -1,16 +1,7 @@
-# model weights
 *.safetensors
-*.pt
-*.ckpt
 
-# python
 __pycache__/
 .ipynb_checkpoints/
-
-# env
-.env
-.venv/
-.idea/
 
 # 연도별 원본 데이터 제외
 data/20*.json
@@ -19,3 +10,6 @@ data/20*.json
 !data/train.json
 !data/test.json
 !data/valid.json
+
+/models/
+/check_kiwi.py
