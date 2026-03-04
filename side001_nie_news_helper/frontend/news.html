@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>뉴스 기사 도우미</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h1>뉴스 기사 도우미</h1>
+
+  <!-- URL 로드 바 -->
+  <div class="row">
+    <input
+      id="urlInput"
+      type="url"
+      placeholder="뉴스 기사 URL 붙여넣기 (예: 동아일보 기사 링크)"
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <button id="btnLoad" type="button">불러오기</button>
+
+    <button id="btnExplain" type="button" disabled>선택 문장 설명</button>
+    <button id="btnQuestions" type="button" disabled>비판 질문 생성</button>
+    <button id="btnVocabLookup" type="button" disabled>단어 조회</button>
+    <button id="btnVocabSave" type="button" disabled>단어 저장</button>
+
+    <span class="pill" id="status">대기</span>
+  </div>
+
+  <h3>기사</h3>
+  <div id="articleMeta" class="meta-line"></div>
+  <div id="article" class="article" contenteditable="false"></div>
+
+  <h3>선택 문장 또는 직접 입력</h3>
+  <textarea
+    id="inputText"
+    placeholder="기사 본문에서 드래그하면 자동으로 들어오고, 직접 입력도 가능"
+  ></textarea>
+
+  <!-- 모달 -->
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" style="display:none;">
+    <div class="modal">
+      <h3>결과</h3>
+      <div class="box" id="outputBox"></div>
+      <div class="actions">
+        <button id="btnCopy" type="button">복사</button>
+        <button id="btnClose" type="button">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>

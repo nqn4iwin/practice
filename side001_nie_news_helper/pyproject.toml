@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nie-news-helper"
+version = "0.1.0"
+description = "NIE news article helper MVP"
+requires-python = ">=3.10"
+dependencies = [
+  "flask>=3.0.0",
+  "flask-cors>=4.0.0",
+  "requests>=2.31.0",
+  "beautifulsoup4>=4.12.0",
+  "fastapi",
+  "pydantic",
+  "sqlalchemy",
+  "uvicorn",
+  "httpx",
+  "certifi>=2026.2.25",
+]
+
+[dependency-groups]
+dev = [
+  "ruff>=0.6.0",
+]
+
+[tool.uv]
+package = false

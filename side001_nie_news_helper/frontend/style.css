@@ -1,0 +1,58 @@
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; }
+
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+input[type="url"] {
+  flex: 1 1 420px;
+  min-width: 260px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+textarea { width: 100%; height: 220px; padding: 12px; box-sizing: border-box; border: 1px solid #ddd; border-radius: 10px; }
+
+.article {
+  width: 100%;
+  min-height: 260px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+  overflow: auto;
+  line-height: 1.6;
+}
+
+/* app.js가 <p>로 문단 렌더링하는 MVP 기준 */
+.article p {
+  margin: 0 0 12px;
+  white-space: pre-wrap;
+}
+.article p:last-child { margin-bottom: 0; }
+
+button { padding: 10px 14px; border: 1px solid #ccc; border-radius: 10px; background: white; cursor: pointer; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal {
+  width: min(720px, 100%);
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+.modal h3 { margin: 0 0 10px; }
+.modal .box { border: 1px solid #eee; border-radius: 10px; padding: 10px; background: #fcfcfc; white-space: pre-wrap; }
+.modal .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 12px; }
+
+.pill { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #eef2ff; font-size: 12px; }
+
+.meta-line { margin-top: 8px; font-size: 13px; color: #444; }
