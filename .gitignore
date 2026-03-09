@@ -1,3 +1,7 @@
 service/.idea/
 service/__pycache__/
 *.pyc
+
+
+side003*/
+side004*/
