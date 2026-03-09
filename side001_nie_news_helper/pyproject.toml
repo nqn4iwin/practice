@@ -18,6 +18,7 @@ dependencies = [
   "uvicorn",
   "httpx",
   "certifi>=2026.2.25",
+  "python-dotenv>=1.2.2",
 ]
 
 [dependency-groups]

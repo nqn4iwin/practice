@@ -228,12 +228,39 @@ btnLoad.addEventListener("click", async () => {
     const title = s(data?.title);
     const source = s(data?.source);
 
-    현재문단목록 = Array.isArray(data?.paragraphs) ? data.paragraphs : [];
+    const rawParas = Array.isArray(data?.paragraphs) ? data.paragraphs : [];
+
+    현재문단목록 = rawParas
+      .map((p, idx) => {
+        if (typeof p === "string") return { id: `p${idx+1}`, text: p };
+        return { id: p?.id ?? `p${idx+1}`, text: p?.text ?? "" };
+      })
+    .filter(p => typeof p.text === "string" && p.text.trim().length > 0);
+
+    console.log("parse raw", rawParas[0], "normalized", 현재문단목록[0]);
+    console.log("len", 현재문단목록.length);
+
     마지막선택문단인덱스 = -1;
 
     articleMetaEl.textContent = (title ? title : "제목 없음") + (source ? ` | ${source}` : "");
-    렌더기사();
-    setStatus("기사 로드됨");
+
+    const box = document.querySelector("#article");
+    box.textContent = 현재문단목록
+      .map(p => (typeof p === "string" ? p : (p?.text ?? "")))
+      .filter(t => t.trim().length > 0)
+      .join("\n\n");
+
+    // 렌더기사();
+
+    if (현재문단목록.length === 0) {
+      setStatus("본문 없음");
+      openModal("본문이 비어있습니다. (paragraphs 길이 0)");
+    } else {
+      setStatus("기사 로드됨");
+    }
+
+    console.log("parse raw", data?.paragraphs?.[0], "normalized", 현재문단목록[0]);
+
   } catch (err) {
     현재기사ID = "";
     현재문단목록 = [];
